@@ -1,5 +1,4 @@
 import sys
-import traceback
 from typing import Dict, Tuple
 import os
 import pandas as pd
@@ -87,11 +86,9 @@ class MainUtils:
     @staticmethod    
     def load_object(file_path):
         try:
-            with open(file_path, 'rb') as file_obj:
+            with open(file_path,'rb') as file_obj:
                 return pickle.load(file_obj)
         except Exception as e:
-            logging.error(f"Error loading object from {file_path}")
-            logging.error(f"Exception message: {str(e)}")
-            logging.error(f"Traceback: {traceback.format_exc()}")
-            raise CustomException(e, sys)
+            logging.info('Exception Occured in load_object function utils')
+            raise CustomException(e,sys)
    
