@@ -5,7 +5,7 @@ import pandas as pd
 import pickle
 import yaml
 import boto3
-
+import joblib
 
 from src.constants import *
 from src.exception import CustomException
@@ -51,7 +51,7 @@ class MainUtils:
 
         try:
             with open(file_path, "wb") as file_obj:
-                pickle.dump(obj, file_obj)
+                joblib.dump(obj, file_obj)
 
 
             logging.info("Exited the save_object method of MainUtils class")
@@ -71,7 +71,7 @@ class MainUtils:
 
         try:
             with open(file_path, "rb") as file_obj:
-                obj = pickle.load(file_obj)
+                obj = joblib.load(file_obj)
 
 
             logging.info("Exited the load_object method of MainUtils class")
@@ -87,7 +87,7 @@ class MainUtils:
     def load_object(file_path):
         try:
             with open(file_path,'rb') as file_obj:
-                return pickle.load(file_obj)
+                return joblib.load(file_obj)
         except Exception as e:
             logging.info('Exception Occured in load_object function utils')
             raise CustomException(e,sys)

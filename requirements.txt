@@ -22,6 +22,7 @@ websockets==10.3
 wincertstore==0.2
 xgboost==1.6.2
 neuro-mf==0.0.5
-boto3==1.26.105
+boto3
 Werkzeug==2.2.2 
-yaml
+pyyaml
+scikit-learn
