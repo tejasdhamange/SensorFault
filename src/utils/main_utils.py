@@ -6,6 +6,7 @@ import pickle
 import yaml
 import boto3
 import joblib
+#joblib as same as pickle
 
 from src.constants import *
 from src.exception import CustomException
